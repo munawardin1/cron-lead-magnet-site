@@ -84,12 +84,15 @@ section { padding-block: 96px; }
 /* Header */
 .site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; background: color-mix(in srgb, var(--cream) 92%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid transparent; transition: border-color .2s; }
 .site-header.scrolled { border-bottom-color: var(--line); }
-.nav { display: flex; align-items: center; gap: 26px; height: 72px; }
-.nav-links { display: flex; gap: 22px; margin-left: auto; }
-.nav-links a { text-decoration: none; font-size: 15px; font-weight: 500; color: var(--muted); white-space: nowrap; }
+/* Logo left, links centred, account buttons right: three calm groups. */
+.site-header .wrap { max-width: 1360px; padding-left: max(32px, env(safe-area-inset-left, 0px)); padding-right: max(32px, env(safe-area-inset-right, 0px)); }
+.nav { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 32px; height: 78px; }
+.nav .logo { justify-self: start; }
+.nav-links { display: flex; gap: 34px; }
+.nav-links a { text-decoration: none; font-size: 15px; font-weight: 500; color: var(--muted); white-space: nowrap; transition: color .15s; }
 .nav-links a:hover { color: var(--ink); }
 .nav-links .menu-only { display: none; }
-.nav-actions { display: flex; align-items: center; gap: 18px; padding-left: 22px; border-left: 1px solid var(--line); }
+.nav-actions { justify-self: end; display: flex; align-items: center; gap: 26px; }
 .signin { font-weight: 600; font-size: 15px; text-decoration: none; white-space: nowrap; }
 .signin:hover { color: var(--forest); }
 .nav .btn { padding: 12px 20px; font-size: 14.5px; white-space: nowrap; }
@@ -371,9 +374,12 @@ form.demo input:focus, form.demo select:focus { outline: none; border-color: var
 @media (max-width: 1100px) {
   .taps { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .thumbs { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .nav { display: flex; gap: 20px; height: 72px; }
+  .site-header .wrap { padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
   .nav-links { display: none; }
-  .nav-actions { margin-left: auto; border-left: 0; padding-left: 0; }
+  .nav-actions { margin-left: auto; gap: 20px; }
   .menu-btn { display: block; margin-left: 4px; }
+  .site-header.open .nav-links .menu-only:not([data-app]) { display: block; }
   .site-header.open .nav-links { display: grid; position: absolute; top: 72px; left: 0; right: 0; background: var(--cream); border-bottom: 1px solid var(--line); padding: 12px max(20px, env(safe-area-inset-right, 0px)) 20px max(20px, env(safe-area-inset-left, 0px)); gap: 4px; }
   .site-header.open .nav-links a { padding: 12px 0; font-size: 17px; color: var(--ink); }
   .rp-flag.f1 { left: -14px; }
@@ -442,7 +448,7 @@ form.demo input:focus, form.demo select:focus { outline: none; border-color: var
       <a href="#features">Features</a>
       <a href="#setup">Setup</a>
       <a href="#tour">Product tour</a>
-      <a href="#upcoming">Coming soon</a>
+      <a class="menu-only" href="#upcoming">Coming soon</a>
       <a href="#plans">Plans</a>
       <a href="#faq">FAQ</a>
       <a class="menu-only" data-app="/login" href="#">Sign in</a>
