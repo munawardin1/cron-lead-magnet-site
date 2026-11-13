@@ -1,6 +1,6 @@
-# Cron Lead Magnet website
+# Cron Meta Lead Manager website
 
-The public landing page for Cron Lead Magnet, the WhatsApp lead manager for Meta ads.
+The public landing page for Cron Meta Lead Manager, the WhatsApp lead manager for Meta ads.
 A plain static site: `index.html` and the `img` folder. No build step.
 
 Before going live, edit the two settings near the bottom of `index.html`:
