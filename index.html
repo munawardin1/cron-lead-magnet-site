@@ -353,6 +353,8 @@ section { padding-block: 96px; }
 .contact h2 { font-size: clamp(36px, 5vw, 60px); }
 .contact-copy { display: grid; gap: 20px; }
 .contact-copy p { color: var(--on-ink-muted); font-size: 17.5px; max-width: 46ch; }
+.contact-direct a { color: var(--bronze); font-weight: 600; text-decoration: none; border-bottom: 1px solid currentColor; white-space: nowrap; }
+.contact-direct a:hover { color: var(--cream); }
 form.demo { background: var(--cream); color: var(--ink); border-radius: var(--r-card); padding: 30px; display: grid; gap: 16px; }
 form.demo label { display: grid; gap: 6px; font: 700 12px/1.2 var(--label); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
 form.demo input, form.demo select { font: 400 16px/1.4 var(--body); color: var(--ink); background: var(--white); border: 1px solid var(--line); border-radius: var(--r); padding: 13px 14px; width: 100%; text-transform: none; letter-spacing: 0; }
@@ -844,6 +846,7 @@ form.demo input:focus, form.demo select:focus { outline: none; border-color: var
         <h2>See it working with <span class="accent">your own ads.</span></h2>
         <p>Tell us a little about your business. We'll message you on WhatsApp and show you Cron Meta Lead Manager in a 20-minute call.</p>
         <ul class="ticks"><li><svg><use href="#tick"/></svg>Free demo, no commitment</li><li><svg><use href="#tick"/></svg>We look at your current ads with you</li><li><svg><use href="#tick"/></svg>Clear quote after the call</li></ul>
+        <p class="contact-direct">Or message us directly on WhatsApp: <a href="https://wa.me/923177423413">+92 317 742 3413</a></p>
       </div>
       <form class="demo" id="demo-form" novalidate>
         <div class="row2">
@@ -887,7 +890,7 @@ form.demo input:focus, form.demo select:focus { outline: none; border-color: var
 <script>
 // ===== Edit these =====
 // Your company WhatsApp number, digits only with country code.
-const CRON_WHATSAPP = '923000000000';
+const CRON_WHATSAPP = '923177423413';
 // Where the system runs. Sign in opens APP_URL/login, Create account opens APP_URL/signup.
 const APP_URL = 'https://15-252-56-115.sslip.io';
 
